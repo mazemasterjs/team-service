@@ -1,0 +1,68 @@
+{
+    "name": "team",
+    "baseUrl": "/api/team/",
+    "endpoints": [
+        {
+            "name": "service",
+            "description": "This document which gleefully describes itself via json.",
+            "method": "get",
+            "contentType": "application/json",
+            "url": "service/",
+            "arguments": []
+        },
+        {
+            "name": "get",
+            "description": "Get team(s) data matching the given query parameters. Example: /get?teamId=SomeTeamId",
+            "method": "get",
+            "contentType": "application/json",
+            "url": "get?key=val&key=val...",
+            "arguments": []
+        },
+        {
+            "name": "insert",
+            "description": "Insert the JSON representation of a Team object into the teams collection. Full team object must be passed via document body.",
+            "method": "put",
+            "contentType": "application/json",
+            "url": "insert",
+            "arguments": []
+        },
+        {
+            "name": "update",
+            "description": "Update an existing team in the database. Full team object must be passed via document body.",
+            "method": "put",
+            "contentType": "application/json",
+            "url": "insert",
+            "arguments": []
+        },
+        {
+            "name": "delete",
+            "description": "Delete team with the matching teamId. Example: /delete/SomeTeamId",
+            "method": "delete",
+            "contentType": "application/json",
+            "url": "delete/{teamId}",
+            "arguments": [
+                {
+                    "name": "teamId",
+                    "description": "teamId is a string GUID that identifies the team document.",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "live",
+            "description": "Liveness probe for K8s monitoring.",
+            "contentType": "application/json",
+            "method": "get",
+            "url": "probes/live/",
+            "arguments": []
+        },
+        {
+            "name": "ready",
+            "description": "Readiness probe for K8s monitoring.",
+            "contentType": "application/json",
+            "method": "get",
+            "url": "probes/ready/",
+            "arguments": []
+        }
+    ]
+}
